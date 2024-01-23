@@ -18,7 +18,9 @@ public class Player{
 
         return (input.toLowerCase().equals("rock") ||
                 input.toLowerCase().equals("paper") ||
-                input.toLowerCase().equals("scissors"));
+                input.toLowerCase().equals("scissors")||
+                input.toLowerCase().equals("exit") ||
+                input.toLowerCase().equals("quit"));
     }
 
     /**
@@ -32,13 +34,13 @@ public class Player{
         String userChoice;
         System.out.print("Enter a choice (rock, paper, scissors): ");
 
-        userChoice = this.scanner.nextLine();
+        userChoice = this.scanner.nextLine().toLowerCase();
 
         while(!isValidInput(userChoice)){
             System.out.println("Enter a valid guess");
             System.out.println("Enter a choice (rock, paper, scissors): ");
-            userChoice = this.scanner.nextLine();
+            userChoice = this.scanner.nextLine().toLowerCase();
         }
-        return userChoice;
+        return userChoice.toLowerCase();
     }
 }
